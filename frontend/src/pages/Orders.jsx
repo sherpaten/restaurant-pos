@@ -4,8 +4,11 @@ import CategoryList from "../components/orders/CategoryList";
 import MenuGrid from "../components/orders/MenuGrid";
 import OrderCart from "../components/orders/OrderCart";
 import { menuItems } from "../data/sampleMenu";
+import { useSearchParams } from "react-router-dom";
 
 export default function Orders() {
+  const [searchParams] = useSearchParams();
+  const tableLabel = searchParams.get("table") || "Table xx";
   const [activeCategory, setActiveCategory] = useState("all");
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState([]);
@@ -43,7 +46,6 @@ export default function Orders() {
           <MenuGrid items={filteredItems} onAdd={addToCart} />
         </div>
       </div>
-      <OrderCart cart={cart} onUpdateQty={updateQty} />
-    </div>
+<OrderCart cart={cart} onUpdateQty={updateQty} table={tableLabel} />    </div>
   );
 }

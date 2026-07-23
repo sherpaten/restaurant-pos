@@ -2,7 +2,7 @@ import { Minus, Plus, Users } from "lucide-react";
 
 const VAT_RATE = 0.13;
 
-export default function OrderCart({ cart, onUpdateQty }) {
+export default function OrderCart({ cart, onUpdateQty, table }) {
   const subtotal = cart.reduce((sum, line) => sum + line.price * line.qty, 0);
   const vat = subtotal * VAT_RATE;
   const total = subtotal + vat;
@@ -10,7 +10,7 @@ export default function OrderCart({ cart, onUpdateQty }) {
   return (
     <div className="w-80 shrink-0 bg-white border border-gray-200 rounded-xl flex flex-col">
       <div className="px-4 py-3 bg-blue text-white rounded-t-xl flex items-center justify-between">
-        <span className="font-medium text-sm">Table xx</span>
+        <span className="font-medium text-sm">{table}</span>
         <span className="flex items-center gap-1 text-xs"><Users size={14} /> xx Guests</span>
       </div>
       <div className="flex-1 overflow-y-auto p-4 space-y-3">
