@@ -5,6 +5,7 @@ import Orders from "./pages/Orders";
 import ComingSoon from "./components/ComingSoon";
 import Kitchen from "./pages/Kitchen";
 import Tables from "./pages/Tables";
+import Menu from "./pages/Menu";
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/tables" element={<Tables />} />
-          <Route path="/menu" element={<ComingSoon title="Menu" />} />
+          <Route path="/menu" element={<Menu />} />
           <Route path="/kitchen" element={<Kitchen />} />
           <Route path="/reports" element={<ComingSoon title="Reports" />} />
           <Route path="/users" element={<ComingSoon title="Users" />} />
